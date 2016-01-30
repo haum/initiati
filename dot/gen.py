@@ -33,10 +33,10 @@ DOORS = [
 	  [CB, CB, CR, CR, CG, CR, CG, CB], # E bottom
 	[CG, CG, CB, CG, CR, CR, CB, CG], # D left and right
 	  [CR, CR, CB, CB, CG, CG, CR, CR], # D bottom
-	[CN, CB, CG, CN, CR, CB, CR, CB], # C left and right
-	  [CG, CG, CR, CG, CB, CN, CG, CG], # C bottom
+	[CN, CB, CG, CG, CR, CB, CR, CB], # C left and right
+	  [CG, CG, CR, CG, CB, CG, CG, CG], # C bottom
 	[CR, CB, CN, CG, CR, CR, CG, CR], # B left and right
-	  [CR, CG, CB, CB, CB, CN, CB, CB], # B bottom
+	  [CR, CG, CB, CB, CB, CR, CB, CB], # B bottom
 ]
 
 print('digraph G {')
