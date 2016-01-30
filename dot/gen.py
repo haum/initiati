@@ -29,17 +29,18 @@ def ring(x):
 	return ['E', 'D', 'C', 'B', 'A'][x]
 
 DOORS = [
-	[CN, CN, CN, CN, CN, CN, CN, CN], # E left and right
-	[CN, CN, CN, CN, CN, CN, CN, CN], # E bottom
-	[CN, CN, CN, CN, CN, CN, CN, CN], # D left and right
-	[CN, CN, CN, CN, CN, CN, CN, CN], # D bottom
-	[CN, CN, CN, CN, CN, CN, CN, CN], # C left and right
-	[CN, CN, CN, CN, CN, CN, CN, CN], # C bottom
-	[CN, CN, CN, CN, CN, CN, CN, CN], # B left and right
-	[CB, CN, CN, CN, CN, CN, CN, CN], # B bottom
+	[CN, CR, CG, CB, CN, CB, CN, CN], # E left and right
+	  [CB, CN, CN, CR, CG, CR, CN, CN], # E bottom
+	[CN, CG, CN, CG, CN, CR, CB, CG], # D left and right
+	  [CN, CR, CB, CN, CN, CG, CN, CR], # D bottom
+	[CN, CB, CN, CN, CR, CB, CN, CB], # C left and right
+	  [CG, CN, CR, CG, CN, CN, CG, CN], # C bottom
+	[CN, CN, CN, CG, CN, CN, CN, CR], # B left and right
+	  [CR, CN, CN, CB, CN, CN, CN, CB], # B bottom
 ]
 
 print('digraph G {')
+print('A0 [shape = doublecircle];')
 
 for x in range(7):
 	for y in range(8):
@@ -57,7 +58,7 @@ for y in range(8):
 	if door != CN:
 		print('\t' + precedent(door) + ring(6) + case1(y) + " -> " + door + "A0" + " // BOTTOM_B " + str(y) + " " + door)
 		print('\t' + precedent(door) + "A0 -> " + door + ring(6) + case1(y) + " // BOTTOM_B " + str(y) + " " + door)
-	
+
 for y in range(8):
 	door = DOORS[7][y]
 	if door != CN:
