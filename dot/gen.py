@@ -30,7 +30,7 @@ def ring(x):
 
 DOORS = [
 	[CN, CR, CG, CB, CB, CB, CN, CR], # E left and right
-	  [CB, CN, CN, CR, CG, CR, CG, CB], # E bottom
+	  [CB, CB, CR, CR, CG, CR, CG, CB], # E bottom
 	[CG, CG, CB, CG, CR, CR, CB, CG], # D left and right
 	  [CR, CR, CB, CB, CG, CG, CN, CR], # D bottom
 	[CN, CB, CG, CN, CR, CB, CN, CB], # C left and right
