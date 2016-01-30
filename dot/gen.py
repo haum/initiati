@@ -29,14 +29,14 @@ def ring(x):
 	return ['E', 'D', 'C', 'B', 'A'][x]
 
 DOORS = [
-	[CN, CR, CG, CB, CN, CB, CN, CN], # E left and right
-	  [CB, CN, CN, CR, CG, CR, CN, CN], # E bottom
-	[CN, CG, CN, CG, CN, CR, CB, CG], # D left and right
-	  [CN, CR, CB, CN, CN, CG, CN, CR], # D bottom
-	[CN, CB, CN, CN, CR, CB, CN, CB], # C left and right
-	  [CG, CN, CR, CG, CN, CN, CG, CN], # C bottom
-	[CN, CN, CN, CG, CN, CN, CN, CR], # B left and right
-	  [CR, CN, CN, CB, CN, CN, CN, CB], # B bottom
+	[CN, CR, CG, CB, CN, CB, CN, CR], # E left and right
+	  [CB, CN, CN, CR, CG, CR, CG, CB], # E bottom
+	[CG, CG, CN, CG, CN, CR, CB, CG], # D left and right
+	  [CR, CR, CB, CN, CG, CG, CN, CR], # D bottom
+	[CN, CB, CG, CN, CR, CB, CN, CB], # C left and right
+	  [CG, CN, CR, CG, CB, CN, CG, CN], # C bottom
+	[CN, CN, CN, CG, CN, CR, CG, CR], # B left and right
+	  [CR, CN, CB, CB, CN, CN, CB, CB], # B bottom
 ]
 
 print('digraph G {')
