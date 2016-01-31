@@ -1,3 +1,5 @@
+from itertools import product
+
 CN = 'N'
 CR = 'R'
 CG = 'V'
@@ -12,6 +14,16 @@ def precedent(color):
 		return CG
 	if color == CG:
 		return CR
+
+def colorname(color):
+	if color == CN:
+		return 'black'
+	if color == CR:
+		return 'red'
+	if color == CB:
+		return 'blue'
+	if color == CG:
+		return 'green'
 
 def case1(y):
 	y += 1
@@ -40,25 +52,30 @@ DOORS = [
 ]
 
 print('digraph G {')
-print('RA0 [shape = doublecircle];')
-print('VA0 [shape = doublecircle];')
-print('BA0 [shape = doublecircle];')
+print('RA0 [shape = doublecircle,color=red];')
+print('VA0 [shape = doublecircle,color=green];')
+print('BA0 [shape = doublecircle,color=blue];')
 
 for x in range(7):
 	for y in range(8):
 		door = DOORS[x][y]
 		if door != CN:
 			if x % 2:
-				print('\t' + precedent(door) + ring(x) + case1(y) + " -> " + door + ring(x+2) + case1(y) + " // BOTTOM " + str(x) + " " + str(y) + " " + door)
-				print('\t' + precedent(door) + ring(x+2) + case1(y) + " -> " + door + ring(x) + case1(y) + " // BOTTOM " + str(x) + " " + str(y) + " " + door)
+				print('\t' + precedent(door) + ring(x) + case1(y) + " -> " + door + ring(x+2) + case1(y) + "[color=" + colorname(door) + "] // BOTTOM " + str(x) + " " + str(y) + " " + door)
+				print('\t' + precedent(door) + ring(x+2) + case1(y) + " -> " + door + ring(x) + case1(y) + "[color=" + colorname(door) + "] // BOTTOM " + str(x) + " " + str(y) + " " + door)
 			else:
-				print('\t' + precedent(door) + ring(x) + case1(y) + " -> " + door + ring(x) + case1(y - 1) + " // LR " + str(x) + " " + str(y) + " " + door)
-				print('\t' + precedent(door) + ring(x) + case1(y - 1) + " -> " + door + ring(x) + case1(y) + " // LR " + str(x) + " " + str(y) + " " + door)
+				print('\t' + precedent(door) + ring(x) + case1(y) + " -> " + door + ring(x) + case1(y - 1) + "[color=" + colorname(door) + "] // LR " + str(x) + " " + str(y) + " " + door)
+				print('\t' + precedent(door) + ring(x) + case1(y - 1) + " -> " + door + ring(x) + case1(y) + "[color=" + colorname(door) + "] // LR " + str(x) + " " + str(y) + " " + door)
 
 for y in range(8):
 	door = DOORS[7][y]
 	if door != CN:
-		print('\t' + precedent(door) + ring(6) + case1(y) + " -> " + door + "A0" + " // BOTTOM_B " + str(y) + " " + door)
-		print('\t' + precedent(door) + "A0 -> " + door + ring(6) + case1(y) + " // BOTTOM_B " + str(y) + " " + door)
+		print('\t' + precedent(door) + ring(6) + case1(y) + " -> " + door + "A0 [color=" + colorname(door) + "] // BOTTOM_B " + str(y) + " " + door)
+		print('\t' + precedent(door) + "A0 -> " + door + ring(6) + case1(y) + " [color=" + colorname(door) + "] // BOTTOM_B " + str(y) + " " + door)
+
+for i in product("BCDE", "12345678"):
+	print('R' + "".join(i) + " [color=red];")
+	print('V' + "".join(i) + " [color=green];")
+	print('B' + "".join(i) + " [color=blue];")
 
 print('}')
