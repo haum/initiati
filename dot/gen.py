@@ -40,7 +40,9 @@ DOORS = [
 ]
 
 print('digraph G {')
-print('A0 [shape = doublecircle];')
+print('RA0 [shape = doublecircle];')
+print('VA0 [shape = doublecircle];')
+print('BA0 [shape = doublecircle];')
 
 for x in range(7):
 	for y in range(8):
@@ -58,10 +60,5 @@ for y in range(8):
 	if door != CN:
 		print('\t' + precedent(door) + ring(6) + case1(y) + " -> " + door + "A0" + " // BOTTOM_B " + str(y) + " " + door)
 		print('\t' + precedent(door) + "A0 -> " + door + ring(6) + case1(y) + " // BOTTOM_B " + str(y) + " " + door)
-
-for y in range(8):
-	door = DOORS[7][y]
-	if door != CN:
-		print("\tA0 -> " + door + ring(6) + case1(y) + " // BOTTOM_A0 " + str(y) + " " + door)
 
 print('}')
