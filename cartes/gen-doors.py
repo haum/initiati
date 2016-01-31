@@ -1,16 +1,40 @@
 #!/usr/bin/env python3
 
+CR = 'Circle'
+CG = 'Triangle'
+CB = 'Square'
+
+DOORS = [
+	[CG, CR, CG, CB, CB, CB, CB, CR], # E left and right
+	  [CB, CB, CR, CR, CG, CR, CG, CB], # E bottom
+	[CG, CG, CB, CG, CR, CR, CB, CG], # D left and right
+	  [CR, CR, CB, CB, CG, CG, CR, CR], # D bottom
+	[CG, CB, CG, CG, CR, CB, CR, CB], # C left and right
+	  [CG, CG, CR, CG, CB, CG, CG, CG], # C bottom
+	[CR, CB, CB, CG, CR, CR, CG, CR], # B left and right
+	  [CR, CG, CB, CB, CB, CR, CB, CB], # B bottom
+]
+
 import math
 
 class Door:
     _id = 0 # Should be static
 
+    def factory(idAngle, idRadius):
+        klass = DOORS[7-(idRadius)][idAngle]
+        if(klass=='Circle'):
+            return Circle(idAngle, idRadius)
+        elif(klass=='Square'):
+            return Square(idAngle, idRadius)
+        elif(klass=='Triangle'):
+            return Triangle(idAngle, idRadius)
+
     def __init__(self, idAngle, idRadius):
         Door._id = Door._id + 1
         self._id = Door._id 
-        self._originX = 100
-        self._originY = 200
-        self._tagId = "square"
+        self._originX = 600
+        self._originY = 600
+        self._tagId = "dummy"
         self._idAngle = idAngle
         self._idRadius = idRadius
         
@@ -21,9 +45,9 @@ class Door:
             offset = 0
 
         angle = 90+offset-self._idAngle*45
-        ratio = self._idRadius/10*177.165
-        x = math.cos(math.radians(angle))*ratio
-        y = math.sin(math.radians(angle))*ratio
+        ratio = ((1.5+self._idRadius)/9.5)*(177.165/2)
+        x = math.sin(math.radians(angle))*ratio
+        y = math.cos(math.radians(angle))*ratio
 
         return (x, y)
 
@@ -36,11 +60,32 @@ class Door:
        xlink:href=\"#" + self._tagId + "\"\n\
        id=\"door" + str(self._id) + "\"\n\
        transform=\"translate(" + str(translateX) + "," + str(translateY) + ")\"\n\
-       width=\"744.09448\"\n\
-       height=\"1052.3622\" />\
+       width=\"500\"\n\
+       height=\"500\" />\
 ")
 
+class Circle(Door):
+    def __init__(self, idAngle, idRadius):
+        Door.__init__(self, idAngle, idRadius)
+        self._originX = -100
+        self._originY = 200
+        self._tagId = "circle"
+        
+class Square(Door):
+    def __init__(self, idAngle, idRadius):
+        Door.__init__(self, idAngle, idRadius)
+        self._originX = -100
+        self._originY = 100
+        self._tagId = "square"
+
+class Triangle(Door):
+    def __init__(self, idAngle, idRadius):
+        Door.__init__(self, idAngle, idRadius)
+        self._originX = -100
+        self._originY = 150
+        self._tagId = "triangle"
+
 for i in range (0,8):
-    for beta in range (9,1,-1):
-        d = Door(i, beta)
+    for beta in range (0,8):
+        d = Door.factory(i, beta)
         print(d.getSvgPart())
