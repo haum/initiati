@@ -1,92 +1,81 @@
-Initiati
+#Initiati
 
 De 1 à 4 joueurs
 
-Composition
-
-    Quatre flexagones (indicateur de couleur)
-
-    Quatre pions de couleur
-
-    Un plateau labyrinthe
-
-    Cartes destin :
-
-    Élévation:
+##Composition
 
 
-    Malédiction:
+   * Quatre flexagones (indicateur de couleur)
+   * Quatre pions de couleur
+   * Un plateau labyrinthe
+   * Cartes destin :
+          * Élévation:
+                  * 
 
+       * Malédiction:
+           * 
 
-    Bénédiction
+       * Bénédiction
+           * 
 
+   * Une règle du jeu
 
-    Une règle du jeu
-
-
-Introduction
+##Introduction
 
 Dans leur recherche de quête initiatique, le peuple Idigni envoie ses novices dans le labyrinthe Initiati.
 Ils doivent alors parcourir le dédale afin de passer les sas de sagesse pour s'aguerrir.
 Les apprentis devront suivre les rituels ancestraux pour ne pas s'attirer les foudres des esprits du lieu : cercle rouge, triangle vert, carré bleu. Pour les aider, ils disposent d'une amulette magique.
 
-But du jeu
+##But du jeu
 
 Être le premier à terminer sa quête initiatique, c'est-à-dire à s'être arrêté successivement sur les trois sas de sagesse : Apprendre, Collecter, Réaliser.
 
-Préparation
+##Préparation
 
 Disposer le plateau et les cartes à portée des joueurs.
 Distribuer une amulette à chaque joueur.
 Placer les sas de sagesse sur le plateau selon la difficulté choisie.
 Placer les pions sur la case centrale.
 
-Premier tour
+##Premier tour
 
 Les apprentis choisissent au shi-fu-mi (pierre-papier-ciseaux) le premier à jouer.
 Le tour s'effectuera ensuite dans le sens inverse des aiguilles d'une montre.
 Pour ce premier tour, chaque apprenti traverse la porte de son choix, dont la couleur déterminera la suite de son rituel.
 Les autres règles du déroulement d'un tour s'appliquent.
 
-Déroulement d'un tour
+##Déroulement d'un tour
 
 À son tour, chaque apprenti pioche une carte qu'il ajoute à sa main.
 
 Il peut ensuite décider de :
 
-    finir son tour (et ainsi conserver des cartes destin pour les jouer en série plus tard)
-
-    enchaîner des actions
-
-
+   * finir son tour (et ainsi conserver des cartes destin pour les jouer en série plus tard)
+   * enchaîner des actions
 Pour enchaîner des actions, un apprenti pose autant de cartes qu'il souhaite et leurs effets s'exécutent suivant l'ordre dans lequel elles ont été posées.
 
-Carte Évolution
+###Carte Évolution
 
 Une carte Évolution permet d'avancer dans le labyrinthe. Il faut alors respecter l'ordre rituel : cercle rouge, triangle vert, carré bleu, cercle rouge, etc...
 Les cartes Évolution sont marquées d'un chiffre qui correspond au nombre de portes que la carte permet de passer.
 Il peut arriver qu'un apprenti s'engage dans une impasse. Arrivé au bout, il lui suffira d'essayer de faire un pas de plus pour être ramené au centre du labyrinthe.
 Attention, il devra alors continuer le rituel.
 
-Carte Malédiction
+###Carte Malédiction
 
 Une carte Malédiction représente un piège qu'un apprenti peut poser sur la case où il se trouve ou un maléfice visant un des autres apprentis.
 
 Les cartes pièges (à poser dans le labyrinthe) sont :
     
 
-    Retour au centre : l'apprenti s'arrêtant sur cette case continue son déplacement à partir du centre
-
-    Rotation horaire : tous les apprentis avancent d'une case en sens horaire sans tenir compte de la couleur de la porte.
-
-    Décalage vers l'anneau supérieur : l'apprenti s'arrêtant sur cette case se déplace d'un anneau vers l'extérieur, si il est déjà sur l'anneau extérieur il se place sur l'anneau intérieur.
-
-
-Carte Bénédiction
+   * Retour au centre : l'apprenti s'arrêtant sur cette case continue son déplacement à partir du centre
+   * Rotation horaire : tous les apprentis avancent d'une case en sens horaire sans tenir compte de la couleur de la porte.
+   * Décalage vers l'anneau supérieur : l'apprenti s'arrêtant sur cette case se déplace d'un anneau vers l'extérieur, si il est déjà sur l'anneau extérieur il se place sur l'anneau intérieur.
+###Carte Bénédiction
 
 Une carte Bénédiction permet
 
-Fin du jeu
+##Fin du jeu
 
 Précisions ?
 
