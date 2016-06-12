@@ -48,7 +48,7 @@ DOORS = [
 	[CG, CB, CG, CG, CR, CB, CR, CB], # C left and right
 	  [CG, CG, CR, CG, CB, CG, CG, CG], # C bottom
 	[CR, CB, CB, CG, CR, CR, CG, CR], # B left and right
-	  [CR, CG, CB, CB, CB, CR, CB, CB], # B bottom
+	  [CR, CG, CB, CB, CB, CG, CB, CB], # B bottom
 ]
 
 print('digraph G {')
