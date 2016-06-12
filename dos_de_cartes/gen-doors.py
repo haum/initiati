@@ -5,13 +5,14 @@ CG = 'Triangle'
 CB = 'Square'
 
 DOORS = [
-	[CG, CR, CG, CB, CB, CB, CB, CR], # E left and right
+	  [CB, CR, CR, CB, CG, CB, CR, CG], # outter ring
+	[CG, CR, CG, CB, CB, CB, CB, CR],   # E left and right
 	  [CB, CB, CR, CR, CG, CR, CG, CB], # E bottom
-	[CG, CG, CB, CG, CR, CR, CB, CG], # D left and right
+	[CG, CG, CB, CG, CR, CR, CB, CG],   # D left and right
 	  [CR, CR, CB, CB, CG, CG, CR, CR], # D bottom
-	[CG, CB, CG, CG, CR, CB, CR, CB], # C left and right
+	[CG, CB, CG, CG, CR, CB, CR, CB],   # C left and right
 	  [CG, CG, CR, CG, CB, CG, CG, CG], # C bottom
-	[CR, CB, CB, CG, CR, CR, CG, CR], # B left and right
+	[CR, CB, CB, CG, CR, CR, CG, CR],   # B left and right
 	  [CR, CG, CB, CB, CB, CR, CB, CB], # B bottom
 ]
 
@@ -21,7 +22,7 @@ class Door:
     _id = 0 # Should be static
 
     def factory(idAngle, idRadius):
-        klass = DOORS[7-(idRadius)][idAngle]
+        klass = DOORS[8-(idRadius)][idAngle]
         if(klass=='Circle'):
             return Circle(idAngle, idRadius)
         elif(klass=='Square'):
@@ -86,6 +87,6 @@ class Triangle(Door):
         self._tagId = "triangle"
 
 for i in range (0,8):
-    for beta in range (0,8):
+    for beta in range (0,9):
         d = Door.factory(i, beta)
         print(d.getSvgPart())
